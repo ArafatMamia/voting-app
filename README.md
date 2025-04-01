@@ -16,7 +16,7 @@ This is a backend application for a voting system where users can vote for candi
 
 
 # API Endpoints
-## Authentication
+## User Authentication
 ### Sign Up
 - POST /signup: Sign up a user
 ### Login
