@@ -1,10 +1,19 @@
 const express = require('express')
-const bodyParser = require('body-parser'); 
+const userRoutes = require('./routes/userRoutes');
+const candidateRoutes = require('./routes/candidateRoutes');
+const databaseConnection = require('./db');
 const app = express();
 require('dotenv').config();
 
+databaseConnection()
+
+const bodyParser = require('body-parser'); 
 app.use(bodyParser.json()); // req.body
 const PORT = process.env.PORT || 3000;
+
+// Use the routers
+app.use('/user', userRoutes);
+app.use('/candidate', candidateRoutes);
 
 
 app.listen(PORT, ()=>{
